@@ -622,29 +622,29 @@
 .focus-mission--1 .mission-status i,
 .focus-mission--2 .mission-status i,
 .focus-mission--3 .mission-status i {
-  animation: mission-sequence 8s linear infinite;
+  animation: mission-sequence 2.1s linear infinite;
 }
 
 .focus-mission--2 .mission-status i {
-  animation-delay: .9s;
+  animation-delay: .38s;
 }
 
 .focus-mission--3 .mission-status i {
-  animation-delay: 1.8s;
+  animation-delay: .76s;
 }
 
 .focus-mission--1,
 .focus-mission--2,
 .focus-mission--3 {
-  animation: mission-card-sequence 8s linear infinite;
+  animation: mission-card-sequence 2.1s linear infinite;
 }
 
 .focus-mission--2 {
-  animation-delay: .9s;
+  animation-delay: .38s;
 }
 
 .focus-mission--3 {
-  animation-delay: 1.8s;
+  animation-delay: .76s;
 }
 
 .focus-footer {
@@ -723,13 +723,13 @@
   transform-origin: 250px 250px;
   transform-style: preserve-3d;
   filter: drop-shadow(7px 11px 5px rgb(0 0 0 / 64%));
-  animation: dart-arrive 8s cubic-bezier(.18, .78, .22, 1) infinite;
+  animation: dart-arrive 2.1s cubic-bezier(.18, .78, .22, 1) infinite;
 }
 
 .dart--one .dart-trail,
 .dart--two .dart-trail,
 .dart--three .dart-trail {
-  animation: dart-trail 8s ease-out infinite;
+  animation: dart-trail 2.1s ease-out infinite;
 }
 
 .dart--two {
@@ -737,11 +737,11 @@
   --dart-from-y: -220px;
   --dart-mid-x: 76px;
   --dart-mid-y: -75px;
-  animation-delay: .9s;
+  animation-delay: .38s;
 }
 
 .dart--two .dart-trail {
-  animation-delay: .9s;
+  animation-delay: .38s;
 }
 
 .dart--three {
@@ -749,11 +749,11 @@
   --dart-from-y: 225px;
   --dart-mid-x: 73px;
   --dart-mid-y: 77px;
-  animation-delay: 1.8s;
+  animation-delay: .76s;
 }
 
 .dart--three .dart-trail {
-  animation-delay: 1.8s;
+  animation-delay: .76s;
 }
 
 .dart--one {
@@ -768,19 +768,19 @@
   stroke-width: 2;
   transform-box: view-box;
   transform-origin: 250px 250px;
-  animation: target-impact 8s ease-out infinite;
+  animation: target-impact 2.1s ease-out infinite;
 }
 
 .impact-ring--one {
-  animation-delay: .45s;
+  animation-delay: .18s;
 }
 
 .impact-ring--two {
-  animation-delay: 1.35s;
+  animation-delay: .56s;
 }
 
 .impact-ring--three {
-  animation-delay: 2.25s;
+  animation-delay: .94s;
 }
 
 @keyframes dart-arrive {
@@ -810,9 +810,27 @@
   }
 
   11%,
-  99.8% {
+  58% {
     opacity: 1;
     transform: translate3d(0, 0, 0) scale(1) rotateX(0) rotateY(0);
+  }
+
+  63% {
+    opacity: 0;
+    transform:
+      translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
+      scale(.28)
+      rotateX(32deg)
+      rotateY(-18deg);
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
+      scale(.28)
+      rotateX(32deg)
+      rotateY(-18deg);
   }
 
   100% {
