@@ -1,6 +1,8 @@
 import { useId, useState } from 'react'
 import './App.css'
 
+const assetUrl = (path) => `${import.meta.env.BASE_URL}${path}`
+
 const services = [
   {
     number: '01',
@@ -440,7 +442,7 @@ function App() {
         <div className="header-inner page-shell">
           <a className="brand" href="#home" onClick={closeMenu} aria-label="Ranjan Ai Digital Marketing — Home">
             <span className="brand-mark">
-              <img src="/images/ranjan-logo.jpeg" alt="" />
+              <img src={assetUrl('images/ranjan-logo.jpeg')} alt="" />
             </span>
             <span className="brand-copy">
               <span className="brand-name">Ranjan Ai</span>
@@ -510,7 +512,7 @@ function App() {
             <div className="portrait-frame">
               <img
                 className="portrait-image"
-                src="/images/ranjan-portrait.png"
+                src={assetUrl('images/ranjan-portrait.png')}
                 alt="Ranjan Kumar, AI and digital marketing creator"
               />
             </div>
@@ -635,7 +637,7 @@ function App() {
           <div className="about-inner page-shell">
             <div className="about-image-wrap">
               <img
-                src="/images/ranjan-portrait.png"
+                src={assetUrl('images/ranjan-portrait.png')}
                 alt="Ranjan Kumar at his workspace"
                 loading="lazy"
               />
@@ -802,7 +804,7 @@ function App() {
       <footer className="site-footer">
         <div className="footer-inner page-shell">
           <a className="brand brand--footer" href="#home">
-            <span className="brand-mark"><img src="/images/ranjan-logo.jpeg" alt="" /></span>
+            <span className="brand-mark"><img src={assetUrl('images/ranjan-logo.jpeg')} alt="" /></span>
             <span className="brand-copy">
               <span className="brand-name">Ranjan Ai</span>
               <span className="brand-caption">DIGITAL MARKETING</span>
