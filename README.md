@@ -52,3 +52,9 @@ Do not add `.env` files or secret credentials to GitHub; they are excluded by `.
 ## Deploy with Vercel
 
 Import the GitHub repository into Vercel. Vercel detects Vite automatically; use `npm run build` as the build command and `dist` as the output directory. The site does not need environment variables in its current form.
+
+## Publish with GitHub Pages
+
+The included GitHub Actions workflow builds and publishes the site whenever changes are pushed to `main`. After the first successful deployment, visit:
+
+`https://kranjan8196-star.github.io/portfolio01/`

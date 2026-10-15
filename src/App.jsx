@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
 import './App.css'
 
 const services = [
@@ -16,15 +16,15 @@ const services = [
   },
   {
     number: '03',
-    icon: 'ads',
-    title: 'Meta & Google Ads',
-    description: 'Learn targeted paid campaign setup for Meta and Google, including audience targeting and lead forms.',
+    icon: 'web',
+    title: 'Website Design & Landing Pages',
+    description: 'Design modern, responsive websites and landing pages tailored to your brand and mobile visitors.',
   },
   {
     number: '04',
-    icon: 'web',
-    title: 'Websites and Landing Pages',
-    description: 'Create a clear, useful, mobile-friendly online home for your brand.',
+    icon: 'ads',
+    title: 'Meta & Google Ads',
+    description: 'Learn targeted paid campaign setup for Meta and Google, including audience targeting and lead forms.',
   },
   {
     number: '05',
@@ -80,6 +80,10 @@ const education = [
     level: 'ADCA Diploma',
     detail: 'One-Year Diploma in Computer Application',
   },
+  {
+    level: 'AI & Digital Marketing',
+    detail: 'Professional learning in AI-powered marketing, social media, Meta and Google Ads, Canva design, and SEO',
+  },
 ]
 
 const projects = [
@@ -124,6 +128,24 @@ const processSteps = [
     number: '03',
     title: 'Work and Improve',
     description: 'Put the plan into action and keep learning what can be improved.',
+  },
+]
+
+const focusMissions = [
+  {
+    title: 'AI Strategy',
+    description: 'Use ChatGPT and modern AI tools to explore ideas and support smarter marketing workflows.',
+    tag: 'SMARTER GROWTH',
+  },
+  {
+    title: 'Digital Marketing',
+    description: 'Bring campaigns, SEO, content, and digital strategy together around clear goals.',
+    tag: 'DIGITAL STRATEGY',
+  },
+  {
+    title: 'Social Media Management',
+    description: 'Manage content and build a consistent presence across Facebook, Instagram, and YouTube.',
+    tag: 'SOCIAL PRESENCE',
   },
 ]
 
@@ -209,6 +231,183 @@ function ArrowIcon({ diagonal = false }) {
   )
 }
 
+function DartboardIllustration({ label }) {
+  const uniqueId = useId().replace(/:/g, '')
+  const ids = {
+    boardSurface: `board-surface-${uniqueId}`,
+    bullseye: `bullseye-${uniqueId}`,
+    dartShaft: `dart-shaft-${uniqueId}`,
+    dartTrail: `dart-trail-${uniqueId}`,
+    dartGlow: `dart-glow-${uniqueId}`,
+    title: `dartboard-title-${uniqueId}`,
+    description: `dartboard-description-${uniqueId}`,
+  }
+  const boardNumbers = [20, 1, 18, 4, 13, 6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5]
+  const pointOnBoard = (radius, angle) => ({
+    x: 250 + Math.cos(angle) * radius,
+    y: 250 + Math.sin(angle) * radius,
+  })
+  const segmentPath = (innerRadius, outerRadius, startAngle, endAngle) => {
+    const innerStart = pointOnBoard(innerRadius, startAngle)
+    const outerStart = pointOnBoard(outerRadius, startAngle)
+    const outerEnd = pointOnBoard(outerRadius, endAngle)
+    const innerEnd = pointOnBoard(innerRadius, endAngle)
+
+    return [
+      `M ${innerStart.x} ${innerStart.y}`,
+      `L ${outerStart.x} ${outerStart.y}`,
+      `A ${outerRadius} ${outerRadius} 0 0 1 ${outerEnd.x} ${outerEnd.y}`,
+      `L ${innerEnd.x} ${innerEnd.y}`,
+      `A ${innerRadius} ${innerRadius} 0 0 0 ${innerStart.x} ${innerStart.y}`,
+      'Z',
+    ].join(' ')
+  }
+
+  return (
+    <svg
+      className="dartboard-art"
+      viewBox="0 0 500 500"
+      role="img"
+      aria-labelledby={`${ids.title} ${ids.description}`}
+    >
+      <title id={ids.title}>{label} mission dartboard</title>
+      <desc id={ids.description}>
+        A dimensional premium dartboard with three gold darts launching one after another into the same bullseye.
+      </desc>
+      <defs>
+        <radialGradient id={ids.boardSurface} cx="45%" cy="38%">
+          <stop offset="0%" stopColor="#34251a" />
+          <stop offset="72%" stopColor="#1d140e" />
+          <stop offset="100%" stopColor="#100b08" />
+        </radialGradient>
+        <radialGradient id={ids.bullseye} cx="38%" cy="32%">
+          <stop offset="0%" stopColor="#f4d38f" />
+          <stop offset="48%" stopColor="#d4a858" />
+          <stop offset="100%" stopColor="#a77532" />
+        </radialGradient>
+        <linearGradient id={ids.dartTrail} x1="100%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stopColor="#fff0c8" stopOpacity="0" />
+          <stop offset="55%" stopColor="#f3c875" stopOpacity=".25" />
+          <stop offset="100%" stopColor="#fff0c8" stopOpacity=".9" />
+        </linearGradient>
+        <linearGradient id={ids.dartShaft} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="#fff0c8" />
+          <stop offset="38%" stopColor="#edca83" />
+          <stop offset="72%" stopColor="#9b6c34" />
+          <stop offset="100%" stopColor="#f2d99f" />
+        </linearGradient>
+        <filter id={ids.dartGlow} x="-100%" y="-100%" width="300%" height="300%">
+          <feGaussianBlur stdDeviation="3" result="blur" />
+          <feMerge>
+            <feMergeNode in="blur" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+      </defs>
+
+      <ellipse cx="257" cy="274" rx="206" ry="202" fill="#000" fillOpacity=".55" filter={`url(#${ids.dartGlow})`} />
+      <circle cx="250" cy="258" r="194" fill="#080604" stroke="#6c4827" strokeWidth="8" />
+      <circle className="board-rim-shadow" cx="250" cy="250" r="194" fill="#080604" />
+      <circle cx="250" cy="250" r="190" fill={`url(#${ids.boardSurface})`} stroke="#d7ac62" strokeOpacity=".78" strokeWidth="4" />
+      <circle cx="250" cy="250" r="186" fill="none" stroke="#f4d38f" strokeOpacity=".25" strokeWidth="1" />
+      <circle cx="250" cy="250" r="181" fill="none" stroke="#6b4b2c" strokeWidth="2" />
+      <circle cx="250" cy="250" r="174" fill="none" stroke="#c29350" strokeOpacity=".8" strokeWidth="3" />
+      <g className="board-number-ring">
+        {boardNumbers.map((number, index) => {
+          const angle = ((index * 18) - 90) * Math.PI / 180
+          const point = pointOnBoard(162, angle)
+          return (
+            <text key={number} x={point.x} y={point.y} textAnchor="middle" dominantBaseline="central">
+              {number}
+            </text>
+          )
+        })}
+      </g>
+      <circle cx="250" cy="250" r="151" fill="#17100b" stroke="#d7ac62" strokeOpacity=".7" strokeWidth="2" />
+      <g className="board-scoring-ring">
+        {boardNumbers.map((number, index) => {
+          const startAngle = ((index * 18) - 99) * Math.PI / 180
+          const endAngle = ((index * 18) - 81) * Math.PI / 180
+          return (
+            <path
+              key={number}
+              d={segmentPath(145, 151, startAngle, endAngle)}
+              className={index % 2 === 0 ? 'board-segment board-segment--gold' : 'board-segment board-segment--dark'}
+            />
+          )
+        })}
+      </g>
+      <circle cx="250" cy="250" r="127" fill="#21170f" stroke="#785532" strokeWidth="2" />
+      <circle cx="250" cy="250" r="104" fill="none" stroke="#d7ac62" strokeOpacity=".52" strokeWidth="3" />
+      <g className="board-scoring-ring board-scoring-ring--inner">
+        {boardNumbers.map((number, index) => {
+          const startAngle = ((index * 18) - 99) * Math.PI / 180
+          const endAngle = ((index * 18) - 81) * Math.PI / 180
+          return (
+            <path
+              key={number}
+              d={segmentPath(98, 104, startAngle, endAngle)}
+              className={index % 2 === 0 ? 'board-segment board-segment--gold' : 'board-segment board-segment--dark'}
+            />
+          )
+        })}
+      </g>
+      <circle cx="250" cy="250" r="78" fill="#1b120c" stroke="#956b39" strokeWidth="2" />
+      <circle cx="250" cy="250" r="55" fill="none" stroke="#d7ac62" strokeOpacity=".63" strokeWidth="3" />
+      <circle cx="250" cy="250" r="33" fill="#21160e" stroke="#aa7b3e" strokeWidth="2" />
+      <circle cx="250" cy="250" r="19" fill={`url(#${ids.bullseye})`} stroke="#f2d397" strokeOpacity=".78" strokeWidth="2" />
+      <g className="board-spokes">
+        {boardNumbers.map((number, index) => {
+          const angle = ((index * 18) - 99) * Math.PI / 180
+          const outer = pointOnBoard(174, angle)
+          const inner = pointOnBoard(33, angle)
+          return (
+            <line key={number} x1={inner.x} y1={inner.y} x2={outer.x} y2={outer.y} />
+          )
+        })}
+      </g>
+
+      <g className="dart dart--one">
+        <path className="dart-trail" d="M -90 250 250 250" fill="none" stroke={`url(#${ids.dartTrail})`} strokeWidth="12" strokeLinecap="round" />
+        <line x1="250" y1="250" x2="55" y2="250" stroke="#080604" strokeOpacity=".82" strokeWidth="9" strokeLinecap="round" />
+        <line x1="250" y1="250" x2="55" y2="250" stroke={`url(#${ids.dartShaft})`} strokeWidth="4" strokeLinecap="round" />
+        <line x1="245" y1="246" x2="61" y2="246" stroke="#fff1cf" strokeOpacity=".7" strokeWidth="1" />
+        <path d="m55 250-40-25 8 34Z" fill="#b88442" stroke="#f0cf8e" strokeWidth="2" filter={`url(#${ids.dartGlow})`} />
+        <path d="m55 250-38 18-9-35Z" fill="#7c522b" stroke="#d7ac62" strokeWidth="2" />
+        <circle cx="55" cy="250" r="5" fill="#f3d697" />
+      </g>
+
+      <g className="dart dart--two">
+        <path className="dart-trail" d="M 590 -70 250 250" fill="none" stroke={`url(#${ids.dartTrail})`} strokeWidth="12" strokeLinecap="round" />
+        <line x1="250" y1="250" x2="405" y2="105" stroke="#080604" strokeOpacity=".75" strokeWidth="8" strokeLinecap="round" />
+        <line x1="250" y1="250" x2="405" y2="105" stroke={`url(#${ids.dartShaft})`} strokeWidth="4" strokeLinecap="round" />
+        <line x1="260" y1="240" x2="399" y2="110" stroke="#fff1cf" strokeOpacity=".65" strokeWidth="1" />
+        <path d="m405 105 39-24-18 42Z" fill="#b88442" stroke="#f0cf8e" strokeWidth="2" filter={`url(#${ids.dartGlow})`} />
+        <path d="m405 105 20-34-42 20Z" fill="#7c522b" stroke="#d7ac62" strokeWidth="2" />
+        <circle cx="405" cy="105" r="5" fill="#f3d697" />
+      </g>
+
+      <g className="dart dart--three">
+        <path className="dart-trail" d="M 580 585 250 250" fill="none" stroke={`url(#${ids.dartTrail})`} strokeWidth="12" strokeLinecap="round" />
+        <line x1="250" y1="250" x2="393" y2="405" stroke="#080604" strokeOpacity=".75" strokeWidth="8" strokeLinecap="round" />
+        <line x1="250" y1="250" x2="393" y2="405" stroke={`url(#${ids.dartShaft})`} strokeWidth="4" strokeLinecap="round" />
+        <line x1="259" y1="260" x2="388" y2="398" stroke="#fff1cf" strokeOpacity=".65" strokeWidth="1" />
+        <path d="m393 405 39 24-42-18Z" fill="#b88442" stroke="#f0cf8e" strokeWidth="2" filter={`url(#${ids.dartGlow})`} />
+        <path d="m393 405 34 20-19-42Z" fill="#7c522b" stroke="#d7ac62" strokeWidth="2" />
+        <circle cx="393" cy="405" r="5" fill="#f3d697" />
+      </g>
+
+      <g className="impact-rings" fill="none" stroke="#f3d697">
+        <circle className="impact-ring impact-ring--one" cx="250" cy="250" r="23" />
+        <circle className="impact-ring impact-ring--two" cx="250" cy="250" r="23" />
+        <circle className="impact-ring impact-ring--three" cx="250" cy="250" r="23" />
+      </g>
+      <circle cx="250" cy="250" r="8" fill="#fff1cf" filter={`url(#${ids.dartGlow})`} />
+      <circle cx="250" cy="250" r="3" fill="#fff8e8" />
+    </svg>
+  )
+}
+
 function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [messagePreview, setMessagePreview] = useState('')
@@ -285,7 +484,7 @@ function App() {
             <h1>
               Ranjan Kumar
               <br />
-              <span>Digital Marketer.</span>
+              <span>AI Digital Marketer.</span>
             </h1>
             <p className="hero-description">
               A fresher in digital marketing with a One-Year Diploma in Computer
@@ -334,6 +533,50 @@ function App() {
           </div>
         </section>
 
+        <section className="focus-section">
+          <div className="focus-inner page-shell">
+            <div className="focus-copy">
+              <p className="eyebrow"><span className="eyebrow-dot" /> Three Focused Missions</p>
+              <h2>Three missions.<br /><span>One bullseye.</span></h2>
+              <p className="focus-intro">
+                AI, digital marketing, and social media management—three focused
+                missions, one shared target.
+              </p>
+              <div className="focus-missions">
+                {focusMissions.map((mission, index) => (
+                  <article className={`focus-mission focus-mission--${index + 1}`} key={mission.title}>
+                    <span className="mission-number">0{index + 1}</span>
+                    <span className="mission-copy">
+                      <strong>{mission.title}</strong>
+                      <small>{mission.tag}</small>
+                    </span>
+                    <span className="mission-status"><i /> MISSION 0{index + 1}</span>
+                  </article>
+                ))}
+              </div>
+              <a className="button button--gold" href="#services">
+                Explore All Services <ArrowIcon />
+              </a>
+            </div>
+            <div className="focus-visual">
+              <div className="focus-art-glow" />
+              <DartboardIllustration label="Three mission darts converging on the bullseye" />
+              <span className="focus-art-label">THREE MISSIONS · ONE TARGET</span>
+              <div className="board-side-label">
+                <span>FOCUS</span>
+                <strong>100%</strong>
+                <i />
+                <small>ON TARGET</small>
+              </div>
+              <div className="board-rim-caption">AI&nbsp; · &nbsp;DIGITAL&nbsp; · &nbsp;SOCIAL</div>
+            </div>
+            <div className="focus-footer">
+              <span><i /> AIM WITH PURPOSE. HIT WITH PRECISION.</span>
+              <span>01 &nbsp;—&nbsp; 03</span>
+            </div>
+          </div>
+        </section>
+
         <section className="services-section section-pad page-shell" id="services">
           <div className="section-heading">
             <div>
@@ -348,7 +591,7 @@ function App() {
 
           <div className="service-grid">
             {services.map((service) => (
-              <article className="service-card" key={service.number}>
+              <article className="service-card" key={service.title}>
                 <div className="service-card-top">
                   <span className="service-number">{service.number}</span>
                   <Icon name={service.icon} className="service-icon" />
