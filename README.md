@@ -55,6 +55,6 @@ Import the GitHub repository into Vercel. Vercel detects Vite automatically; use
 
 ## Publish with GitHub Pages
 
-The included GitHub Actions workflow builds and publishes the site whenever changes are pushed to `main`. After the first successful deployment, visit:
+For the first deployment, open the repository's **Settings → Pages** page and select **GitHub Actions** under **Build and deployment**. This one-time repository setting is required before GitHub allows the workflow to publish. After that, the included GitHub Actions workflow builds and publishes the site whenever changes are pushed to `main`. Visit the public site after the workflow succeeds:
 
 `https://kranjan8196-star.github.io/portfolio01/`
