@@ -1479,6 +1479,7 @@ main section[id] {
   position: absolute;
   bottom: -4px;
   left: 0;
+  pointer-events: none;
   color: rgb(215 172 98 / 22%);
   font-size: 90px;
   line-height: 1;
