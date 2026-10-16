@@ -1,6 +1,6 @@
 #root {
   width: 100%;
-  overflow: hidden;
+  overflow-x: clip;
 }
 
 .page-shell {
@@ -9,12 +9,17 @@
 }
 
 .site-header {
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 5;
   background:
     repeating-linear-gradient(90deg, transparent 0 48px, rgb(219 166 98 / 2%) 49px, transparent 52px 120px),
     #160f0b;
   border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+main section[id] {
+  scroll-margin-top: 100px;
 }
 
 .header-inner,
