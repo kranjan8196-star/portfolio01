@@ -156,7 +156,7 @@ const socialLinks = [
   { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61592488077243' },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ranjan-kumar-a86a30426/' },
   { name: 'YouTube', url: 'https://www.youtube.com/channel/UCvPH5rLCVDtwlJQ-GfC4iUA' },
-  { name: 'WhatsApp', url: 'https://wa.me/918294171400' },
+  { name: 'WhatsApp', url: 'https://api.whatsapp.com/send?phone=918294171400' },
 ]
 
 const currentYear = new Date().getFullYear()
