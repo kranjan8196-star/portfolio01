@@ -152,11 +152,11 @@ const focusMissions = [
 ]
 
 const socialLinks = [
-  { name: 'Instagram', url: 'https://instagram.com/ranjan_kumar291/' },
+  { name: 'Instagram', url: 'https://www.instagram.com/ranjan_kumar291/' },
   { name: 'Facebook', url: 'https://www.facebook.com/profile.php?id=61592488077243' },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/ranjan-kumar-a86a30426/' },
   { name: 'YouTube', url: 'https://www.youtube.com/channel/UCvPH5rLCVDtwlJQ-GfC4iUA' },
-  { name: 'WhatsApp', url: 'https://wa.me/918294171400' },
+  { name: 'WhatsApp', url: 'https://api.whatsapp.com/send?phone=918294171400' },
 ]
 
 const currentYear = new Date().getFullYear()
@@ -758,12 +758,7 @@ function App() {
               </div>
               <nav className="social-links" aria-label="Social media profiles">
                 {socialLinks.map((social) => (
-                  <a
-                    key={social.name}
-                    href={social.url}
-                    target={social.name === 'WhatsApp' ? undefined : '_blank'}
-                    rel={social.name === 'WhatsApp' ? undefined : 'noreferrer'}
-                  >
+                  <a key={social.name} href={social.url}>
                     {social.name} <ArrowIcon diagonal />
                   </a>
                 ))}
