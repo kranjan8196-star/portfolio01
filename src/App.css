@@ -3242,3 +3242,451 @@ textarea:focus-visible {
     transition: none;
   }
 }
+
+:root {
+  --ink: #050505;
+  --ink-soft: #0a0a0a;
+  --paper: #171717;
+  --paper-muted: #111111;
+  --gold: #d4af37;
+  --gold-bright: #ffc857;
+  --muted: #b8b8b8;
+  --text-dark: #f5f5f5;
+  --accent-cyan: #c0c0c0;
+  --line: rgb(212 175 55 / 18%);
+}
+
+body {
+  color: #f5f5f5;
+  background:
+    radial-gradient(ellipse at 12% 8%, rgb(212 175 55 / 9%), transparent 34%),
+    radial-gradient(ellipse at 88% 38%, rgb(192 192 192 / 4%), transparent 30%),
+    #050505;
+}
+
+#root {
+  background:
+    radial-gradient(ellipse at 78% 2%, rgb(212 175 55 / 7%), transparent 32%),
+    #050505;
+}
+
+.site-shell {
+  background-image:
+    linear-gradient(rgb(212 175 55 / 2%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(212 175 55 / 2%) 1px, transparent 1px);
+}
+
+.site-header {
+  border-bottom-color: rgb(212 175 55 / 15%);
+  background: rgb(5 5 5 / 93%);
+}
+
+.brand-mark {
+  border-color: rgb(212 175 55 / 55%);
+  background: linear-gradient(145deg, #171717, #0a0a0a);
+  box-shadow: 0 8px 26px rgb(212 175 55 / 12%);
+}
+
+.brand-name,
+.hero-copy h1,
+.section-heading h2,
+.about-copy h2,
+.contact-copy h2,
+.focus-copy h2,
+.service-card h3,
+.skills-card h3,
+.education-card h3,
+.project-card h3,
+.process-step h3,
+.portrait-label strong,
+.contact-form label {
+  color: #f5f5f5;
+}
+
+.brand-caption,
+.eyebrow,
+.eyebrow--dark,
+.skills-section .eyebrow--dark,
+.education-section .eyebrow--dark,
+.projects-section .eyebrow--dark {
+  color: #d4af37;
+}
+
+.navigation > a {
+  color: #c0c0c0;
+}
+
+.navigation > a:hover,
+.text-link:hover,
+.email-draft-link:hover,
+.back-to-top:hover {
+  color: #ffc857;
+}
+
+.navigation .nav-contact {
+  border-color: rgb(212 175 55 / 52%);
+  color: #ffc857;
+  background: linear-gradient(115deg, rgb(212 175 55 / 12%), rgb(255 200 87 / 5%));
+}
+
+.navigation .nav-contact:hover {
+  border-color: #ffc857;
+  background: rgb(212 175 55 / 16%);
+}
+
+.hero-section {
+  background:
+    radial-gradient(ellipse at 72% 46%, rgb(212 175 55 / 10%), transparent 35%),
+    radial-gradient(ellipse at 10% 88%, rgb(192 192 192 / 4%), transparent 35%);
+}
+
+.eyebrow-dot {
+  background: #d4af37;
+  box-shadow: 0 0 12px rgb(212 175 55 / 42%);
+}
+
+.hero-copy h1 span,
+.about-copy h2 span,
+.contact-copy h2 span,
+.focus-copy h2 span,
+.section-heading h2 span {
+  color: transparent;
+  background: linear-gradient(100deg, #8c6a16 3%, #d4af37 52%, #ffc857 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-description,
+.section-intro,
+.about-copy > p:not(.eyebrow),
+.service-card p,
+.skills-card li,
+.education-card p,
+.project-card p,
+.process-step p,
+.contact-copy > p:not(.eyebrow),
+.form-note,
+.portrait-label small {
+  color: #b8b8b8;
+}
+
+.button:hover {
+  box-shadow: 0 10px 30px rgb(212 175 55 / 20%);
+}
+
+.button--gold {
+  color: #0a0a0a;
+  background: linear-gradient(110deg, #d4af37, #ffc857);
+  box-shadow: 0 8px 26px rgb(212 175 55 / 18%);
+}
+
+.button--gold:hover {
+  background: linear-gradient(110deg, #e5bd45, #ffda7c);
+}
+
+.button--outline {
+  border-color: rgb(212 175 55 / 52%);
+  color: #ffc857;
+  background: rgb(212 175 55 / 5%);
+}
+
+.button--outline:hover {
+  color: #0a0a0a;
+  background: #d4af37;
+}
+
+.hero-halo {
+  border-color: rgb(212 175 55 / 25%);
+  background: radial-gradient(circle, rgb(212 175 55 / 8%), transparent 70%);
+  box-shadow: 0 0 80px rgb(212 175 55 / 8%), inset 0 0 60px rgb(212 175 55 / 5%);
+}
+
+.hero-halo::before,
+.hero-halo::after {
+  border-color: rgb(212 175 55 / 13%);
+}
+
+.portrait-frame {
+  border-color: rgb(212 175 55 / 48%);
+  background: #171717;
+  box-shadow: 0 28px 90px rgb(0 0 0 / 48%), 0 0 42px rgb(212 175 55 / 11%);
+}
+
+.portrait-frame::after {
+  background: linear-gradient(180deg, transparent 65%, rgb(5 5 5 / 46%));
+}
+
+.portrait-label,
+.focus-art-label,
+.board-side-label {
+  border-color: rgb(212 175 55 / 24%);
+  background: rgb(17 17 17 / 92%);
+}
+
+.label-sparkle,
+.board-side-label strong,
+.hero-index,
+.service-number,
+.education-index,
+.project-number,
+.process-number,
+.back-to-top,
+.copyright {
+  color: #d4af37;
+}
+
+.hero-orbit {
+  border-color: #d4af37;
+  background: #0a0a0a;
+  box-shadow: 0 0 13px rgb(212 175 55 / 40%);
+}
+
+.intro-strip {
+  border-block-color: rgb(212 175 55 / 18%);
+  background: linear-gradient(90deg, #0a0a0a, #171717 50%, #0a0a0a);
+}
+
+.intro-strip-inner,
+.focus-footer > span {
+  color: #c0c0c0;
+}
+
+.intro-strip-inner i,
+.board-rim-caption,
+.focus-art-label {
+  color: #d4af37;
+}
+
+.focus-section {
+  border-bottom-color: rgb(212 175 55 / 17%);
+  background:
+    radial-gradient(ellipse at 74% 48%, rgb(212 175 55 / 8%), transparent 38%),
+    linear-gradient(120deg, #0a0a0a, #050505 55%, #11100c);
+}
+
+.focus-mission,
+.skills-card,
+.education-card,
+.project-card,
+.contact-form-wrap,
+.message-preview {
+  border-color: rgb(212 175 55 / 19%);
+  background: linear-gradient(145deg, rgb(23 23 23 / 96%), rgb(10 10 10 / 97%));
+}
+
+.focus-mission {
+  border-radius: 12px;
+}
+
+.focus-mission::before {
+  background: linear-gradient(180deg, transparent, #d4af37, transparent);
+}
+
+.mission-number {
+  border-color: rgb(212 175 55 / 38%);
+  color: #ffc857;
+  background: rgb(212 175 55 / 8%);
+}
+
+.mission-copy small,
+.mission-status,
+.board-side-label span,
+.board-side-label small {
+  color: #b8b8b8;
+}
+
+.mission-status i,
+.focus-footer > span i,
+.board-side-label i {
+  background: #d4af37;
+  box-shadow: 0 0 9px rgb(212 175 55 / 35%);
+}
+
+.focus-mission--1,
+.focus-mission--2,
+.focus-mission--3 {
+  border-left-color: rgb(212 175 55 / 38%);
+}
+
+.focus-art-glow {
+  background: radial-gradient(circle, rgb(212 175 55 / 13%), transparent 69%);
+}
+
+.dartboard-art {
+  filter: none;
+}
+
+.services-section,
+.process-section {
+  color: #f5f5f5;
+  background:
+    radial-gradient(ellipse at 50% 0, rgb(212 175 55 / 7%), transparent 62%),
+    linear-gradient(125deg, #171717, #0a0a0a 58%, #11100c);
+}
+
+.service-grid {
+  gap: 16px;
+  border: 0;
+}
+
+.service-card {
+  border: 1px solid rgb(212 175 55 / 20%);
+  border-radius: 15px;
+  background: linear-gradient(145deg, #171717, #0b0b0b);
+  box-shadow: 0 14px 34px rgb(0 0 0 / 18%);
+  transition: transform .24s ease, border-color .24s ease, background .24s ease;
+}
+
+.service-card:hover,
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: rgb(255 200 87 / 48%);
+  background: linear-gradient(145deg, #201d14, #111111);
+}
+
+.service-icon,
+.service-link,
+.process-number,
+.education-duration,
+.project-tags,
+.email-draft-link {
+  color: #d4af37;
+}
+
+.about-section {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgb(212 175 55 / 7%), transparent 42%),
+    linear-gradient(115deg, #0a0a0a, #111111 60%, #0a0a0a);
+}
+
+.about-image-wrap::before {
+  border-color: rgb(212 175 55 / 44%);
+}
+
+.about-image-wrap img {
+  border-radius: 4px;
+  filter: saturate(.92);
+}
+
+.about-image-caption {
+  border: 1px solid rgb(212 175 55 / 32%);
+  border-radius: 3px;
+  color: #ffc857;
+  background: rgb(17 17 17 / 94%);
+}
+
+.skills-section,
+.education-section,
+.projects-section {
+  background:
+    radial-gradient(ellipse at 34% 0, rgb(212 175 55 / 7%), transparent 60%),
+    linear-gradient(125deg, #171717, #0a0a0a 55%, #11100c);
+}
+
+.skills-card,
+.education-card,
+.project-card {
+  border-radius: 15px;
+  box-shadow: 0 14px 34px rgb(0 0 0 / 16%);
+}
+
+.skills-card li::before {
+  background: #d4af37;
+  box-shadow: 0 0 8px rgb(212 175 55 / 32%);
+}
+
+.education-grid,
+.projects-grid {
+  gap: 14px;
+  border: 0;
+}
+
+.process-step,
+.process-step + .process-step {
+  border-color: rgb(212 175 55 / 19%);
+}
+
+.contact-section {
+  background:
+    radial-gradient(ellipse at 12% 100%, rgb(212 175 55 / 8%), transparent 39%),
+    linear-gradient(125deg, #0a0a0a, #111111);
+}
+
+.contact-details a strong {
+  color: #f0f0f0;
+}
+
+.contact-details a:hover strong {
+  color: #ffc857;
+}
+
+.social-links a {
+  border-color: rgb(212 175 55 / 24%);
+  border-radius: 8px;
+  color: #c0c0c0;
+  background: rgb(23 23 23 / 76%);
+}
+
+.social-links a:hover {
+  border-color: #d4af37;
+  color: #ffc857;
+}
+
+.contact-form-wrap {
+  border-radius: 16px;
+  box-shadow: 0 24px 64px rgb(0 0 0 / 24%);
+}
+
+.contact-form input,
+.contact-form textarea {
+  border-color: rgb(212 175 55 / 17%);
+  border-radius: 8px;
+  color: #f5f5f5;
+  background: #0a0a0a;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgb(212 175 55 / 12%);
+}
+
+.message-preview {
+  border-left: 2px solid #d4af37;
+  border-radius: 0 10px 10px 0;
+  color: #e5e5e5;
+}
+
+.message-preview strong {
+  color: #ffc857;
+}
+
+.message-preview p,
+.form-note {
+  color: #b8b8b8;
+}
+
+.message-preview pre {
+  color: #f0f0f0;
+}
+
+.site-footer {
+  border-top-color: rgb(212 175 55 / 16%);
+  background: #050505;
+}
+
+.footer-inner > p {
+  color: #b8b8b8;
+}
+
+.copyright {
+  border-top-color: rgb(212 175 55 / 13%);
+  color: #99948a;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline-color: #ffc857;
+}

@@ -2,8 +2,8 @@
 
 :root {
   font-family: 'DM Sans', sans-serif;
-  color: #f4f5ff;
-  background: #080b16;
+  color: #f5f5f5;
+  background: #050505;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -11,14 +11,14 @@
   font-optical-sizing: auto;
   font-weight: 400;
   scroll-behavior: smooth;
-  --ink: #080b16;
-  --ink-soft: #0d1120;
-  --paper: #11172a;
-  --paper-muted: #0e1425;
-  --gold: #8d77ff;
-  --gold-bright: #b4a5ff;
-  --muted: #a5acc2;
-  --text-dark: #f4f5ff;
+  --ink: #050505;
+  --ink-soft: #0a0a0a;
+  --paper: #171717;
+  --paper-muted: #111111;
+  --gold: #d4af37;
+  --gold-bright: #ffc857;
+  --muted: #b8b8b8;
+  --text-dark: #f5f5f5;
 }
 
 * {
@@ -29,8 +29,8 @@ body {
   min-width: 320px;
   margin: 0;
   background:
-    radial-gradient(ellipse at 50% -18%, rgb(104 86 255 / 16%), transparent 45%),
-    linear-gradient(135deg, #0b0e1c, #080b16 55%, #0b1020);
+    radial-gradient(ellipse at 50% -18%, rgb(212 175 55 / 10%), transparent 45%),
+    linear-gradient(135deg, #0a0a0a, #050505 55%, #11100c);
 }
 
 body,
@@ -67,8 +67,8 @@ textarea:focus-visible {
 }
 
 ::selection {
-  color: #080b16;
-  background: #b4a5ff;
+  color: #050505;
+  background: #ffc857;
 }
 
 @media (prefers-reduced-motion: reduce) {
