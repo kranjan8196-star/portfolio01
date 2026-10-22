@@ -2494,11 +2494,6 @@ main section[id] {
   filter: hue-rotate(205deg) saturate(.85);
 }
 
-.dartboard-art *,
-.focus-mission {
-  animation: none !important;
-}
-
 .focus-art-label,
 .board-side-label {
   border-color: rgb(173 163 255 / 22%);
@@ -3230,6 +3225,12 @@ textarea:focus-visible {
 
   .footer-inner {
     column-gap: 12px;
+  }
+}
+
+@media (max-width: 340px) {
+  body {
+    min-width: 0;
   }
 }
 
