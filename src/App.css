@@ -3560,11 +3560,11 @@ body {
 }
 
 .dart {
-  opacity: 0;
+  opacity: 1;
   filter: drop-shadow(0 0 7px rgb(255 200 87 / 52%)) drop-shadow(7px 11px 5px rgb(0 0 0 / 64%));
-  animation-duration: 7.2s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier(.18, .78, .22, 1);
+  animation-iteration-count: 1;
   animation-fill-mode: both;
 }
 
@@ -3574,34 +3574,24 @@ body {
 
 .dart--two {
   animation-name: dart-flight-second;
+  animation-delay: .45s;
 }
 
 .dart--three {
   animation-name: dart-flight-third;
-}
-
-.dart--one,
-.dart--two,
-.dart--three {
-  animation-delay: 0s;
-}
-
-.dart--one .dart-trail,
-.dart--two .dart-trail,
-.dart--three .dart-trail {
-  animation-delay: 0s;
+  animation-delay: .9s;
 }
 
 .dart--one .dart-trail {
-  animation: dart-trail-first 7.2s linear infinite;
+  animation: dart-trail-first .8s ease-out both;
 }
 
 .dart--two .dart-trail {
-  animation: dart-trail-second 7.2s linear infinite;
+  animation: dart-trail-first .8s ease-out .45s both;
 }
 
 .dart--three .dart-trail {
-  animation: dart-trail-third 7.2s linear infinite;
+  animation: dart-trail-first .8s ease-out .9s both;
 }
 
 .impact-ring--one {
@@ -3715,177 +3705,89 @@ body {
 }
 
 @keyframes dart-flight-first {
-  0%,
-  1% {
+  0% {
     opacity: 0;
     transform: translate3d(var(--dart-from-x), var(--dart-from-y), -430px) scale(.28) rotateX(32deg) rotateY(-18deg);
   }
 
-  2% {
+  70% {
+    transform: translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px) scale(.62) rotateX(17deg) rotateY(-10deg);
     opacity: 1;
   }
 
-  6% {
-    transform: translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px) scale(.62) rotateX(17deg) rotateY(-10deg);
-    animation-timing-function: cubic-bezier(.18, .78, .22, 1);
-  }
-
-  10%,
-  12%,
-  56% {
-    opacity: 1;
-    transform: none;
-  }
-
-  59% {
-    opacity: .7;
-    transform: translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px) scale(.62) rotateX(17deg) rotateY(-10deg);
-    animation-timing-function: cubic-bezier(.18, .78, .22, 1);
-  }
-
-  62%,
   100% {
-    opacity: 0;
-    transform: translate3d(var(--dart-from-x), var(--dart-from-y), -430px) scale(.28) rotateX(32deg) rotateY(-18deg);
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotateX(0) rotateY(0);
   }
 }
 
 @keyframes dart-flight-second {
-  0%,
-  14% {
+  0% {
     opacity: 0;
     transform: translate3d(var(--dart-from-x), var(--dart-from-y), -430px) scale(.28) rotateX(32deg) rotateY(-18deg);
   }
 
-  15% {
+  70% {
+    transform: translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px) scale(.62) rotateX(17deg) rotateY(-10deg);
     opacity: 1;
   }
 
-  19% {
-    transform: translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px) scale(.62) rotateX(17deg) rotateY(-10deg);
-    animation-timing-function: cubic-bezier(.18, .78, .22, 1);
-  }
-
-  23%,
-  25%,
-  56% {
-    opacity: 1;
-    transform: none;
-  }
-
-  59% {
-    opacity: .7;
-    transform: translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px) scale(.62) rotateX(17deg) rotateY(-10deg);
-    animation-timing-function: cubic-bezier(.18, .78, .22, 1);
-  }
-
-  62%,
   100% {
-    opacity: 0;
-    transform: translate3d(var(--dart-from-x), var(--dart-from-y), -430px) scale(.28) rotateX(32deg) rotateY(-18deg);
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotateX(0) rotateY(0);
   }
 }
 
 @keyframes dart-flight-third {
-  0%,
-  28% {
+  0% {
     opacity: 0;
     transform: translate3d(var(--dart-from-x), var(--dart-from-y), -430px) scale(.28) rotateX(32deg) rotateY(-18deg);
   }
 
-  29% {
+  70% {
+    transform: translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px) scale(.62) rotateX(17deg) rotateY(-10deg);
     opacity: 1;
   }
 
-  33% {
-    transform: translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px) scale(.62) rotateX(17deg) rotateY(-10deg);
-    animation-timing-function: cubic-bezier(.18, .78, .22, 1);
-  }
-
-  37%,
-  39%,
-  56% {
-    opacity: 1;
-    transform: none;
-  }
-
-  59% {
-    opacity: .7;
-    transform: translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px) scale(.62) rotateX(17deg) rotateY(-10deg);
-    animation-timing-function: cubic-bezier(.18, .78, .22, 1);
-  }
-
-  62%,
   100% {
-    opacity: 0;
-    transform: translate3d(var(--dart-from-x), var(--dart-from-y), -430px) scale(.28) rotateX(32deg) rotateY(-18deg);
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1) rotateX(0) rotateY(0);
   }
 }
 
 @keyframes dart-trail-first {
-  0%,
-  1%,
-  100% {
+  0% {
     opacity: 0;
     stroke-dashoffset: 560;
   }
 
-  3% {
+  15% {
     opacity: .9;
   }
 
-  9% {
+  75% {
     opacity: .18;
     stroke-dashoffset: 0;
   }
 
-  12% {
+  100% {
     opacity: 0;
+    stroke-dashoffset: 0;
   }
 }
 
 @keyframes dart-trail-second {
-  0%,
-  14%,
-  100% {
-    opacity: 0;
-    stroke-dashoffset: 560;
-  }
-
-  16% {
-    opacity: .9;
-  }
-
-  22% {
-    opacity: .18;
-    stroke-dashoffset: 0;
-  }
-
-  25% {
-    opacity: 0;
-  }
+  from { opacity: 0; stroke-dashoffset: 560; }
+  15% { opacity: .9; }
+  75% { opacity: .18; stroke-dashoffset: 0; }
+  to { opacity: 0; stroke-dashoffset: 0; }
 }
 
 @keyframes dart-trail-third {
-  0%,
-  28%,
-  100% {
-    opacity: 0;
-    stroke-dashoffset: 560;
-  }
-
-  30% {
-    opacity: .9;
-  }
-
-  36% {
-    opacity: .18;
-    stroke-dashoffset: 0;
-  }
-
-  39% {
-    opacity: 0;
-  }
+  from { opacity: 0; stroke-dashoffset: 560; }
+  15% { opacity: .9; }
+  75% { opacity: .18; stroke-dashoffset: 0; }
+  to { opacity: 0; stroke-dashoffset: 0; }
 }
 
 @keyframes target-impact-first {
@@ -3959,7 +3861,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .dart {
-    opacity: 0;
+    opacity: 1;
     animation: none;
     transform: none;
   }
