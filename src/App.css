@@ -3516,16 +3516,139 @@ body {
   filter: none;
 }
 
+.focus-copy {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.focus-missions {
+  gap: 7px;
+  margin-top: 19px;
+}
+
+.focus-mission {
+  padding-block: 10px;
+}
+
+.focus-copy > .button {
+  margin-top: 12px;
+}
+
 .dart {
   opacity: 1;
-  animation: none;
-  transform: none;
+  filter: drop-shadow(0 0 7px rgb(255 200 87 / 52%)) drop-shadow(7px 11px 5px rgb(0 0 0 / 64%));
+  animation: dart-arrive-premium 4.8s cubic-bezier(.18, .78, .22, 1) infinite;
+}
+
+.dart--two {
+  animation-delay: 1.6s;
+}
+
+.dart--three {
+  animation-delay: 3.2s;
 }
 
 .dart--one .dart-trail,
 .dart--two .dart-trail,
 .dart--three .dart-trail {
-  animation: none;
+  animation: dart-trail-premium 4.8s ease-out infinite;
+}
+
+.dart--two .dart-trail {
+  animation-delay: 1.6s;
+}
+
+.dart--three .dart-trail {
+  animation-delay: 3.2s;
+}
+
+@keyframes dart-arrive-premium {
+  0% {
+    opacity: 1;
+    transform:
+      translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
+      scale(.28)
+      rotateX(32deg)
+      rotateY(-18deg);
+  }
+
+  8% {
+    transform:
+      translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px)
+      scale(.62)
+      rotateX(17deg)
+      rotateY(-10deg);
+  }
+
+  14% {
+    transform: translate3d(-3px, 2px, 16px) scale(1.025) rotateX(-2deg) rotateY(2deg);
+  }
+
+  18%,
+  82% {
+    opacity: 1;
+    transform: none;
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
+      scale(.28)
+      rotateX(32deg)
+      rotateY(-18deg);
+  }
+}
+
+@keyframes dart-trail-premium {
+  0%,
+  2% {
+    opacity: 0;
+    stroke-dashoffset: 560;
+  }
+
+  4% {
+    opacity: .9;
+  }
+
+  14% {
+    opacity: .18;
+    stroke-dashoffset: 0;
+  }
+
+  18%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .focus-missions {
+    gap: 7px;
+    margin-top: 17px;
+  }
+
+  .focus-mission {
+    padding-block: 9px;
+  }
+
+  .focus-copy > .button {
+    margin-top: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dart {
+    animation: none;
+    transform: none;
+  }
+
+  .dart-trail {
+    display: none;
+    animation: none;
+  }
 }
 
 .services-section,

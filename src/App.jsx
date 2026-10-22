@@ -242,7 +242,6 @@ function DartboardIllustration({ label }) {
     dartShaft: `dart-shaft-${uniqueId}`,
     dartTrail: `dart-trail-${uniqueId}`,
     dartGlow: `dart-glow-${uniqueId}`,
-    title: `dartboard-title-${uniqueId}`,
     description: `dartboard-description-${uniqueId}`,
   }
   const boardNumbers = [20, 1, 18, 4, 13, 6, 10, 15, 2, 17, 3, 19, 7, 16, 8, 11, 14, 9, 12, 5]
@@ -271,9 +270,9 @@ function DartboardIllustration({ label }) {
       className="dartboard-art"
       viewBox="0 0 500 500"
       role="img"
-      aria-labelledby={`${ids.title} ${ids.description}`}
+      aria-label={`${label} mission dartboard`}
+      aria-describedby={ids.description}
     >
-      <title id={ids.title}>{label} mission dartboard</title>
       <desc id={ids.description}>
         A dimensional premium dartboard with three gold darts launching one after another into the same bullseye.
       </desc>
