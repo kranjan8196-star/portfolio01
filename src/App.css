@@ -3566,9 +3566,10 @@ body {
 }
 
 .dart {
-  opacity: 1;
+  opacity: 0;
   filter: drop-shadow(0 0 7px rgb(255 200 87 / 52%)) drop-shadow(7px 11px 5px rgb(0 0 0 / 64%));
   animation: dart-arrive-premium 4.8s cubic-bezier(.18, .78, .22, 1) infinite;
+  animation-fill-mode: both;
 }
 
 .dart--two {
@@ -3594,13 +3595,18 @@ body {
 }
 
 @keyframes dart-arrive-premium {
-  0% {
-    opacity: 1;
+  0%,
+  2% {
+    opacity: 0;
     transform:
       translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
       scale(.28)
       rotateX(32deg)
       rotateY(-18deg);
+  }
+
+  3% {
+    opacity: 1;
   }
 
   8% {
@@ -3615,14 +3621,19 @@ body {
     transform: translate3d(-3px, 2px, 16px) scale(1.025) rotateX(-2deg) rotateY(2deg);
   }
 
-  15%,
-  82% {
+  14%,
+  65% {
     opacity: 1;
     transform: none;
   }
 
+  72% {
+    opacity: 0;
+  }
+
+  75%,
   100% {
-    opacity: 1;
+    opacity: 0;
     transform:
       translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
       scale(.28)
@@ -3671,6 +3682,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .dart {
+    opacity: 1;
     animation: none;
     transform: none;
   }
