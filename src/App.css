@@ -3516,6 +3516,18 @@ body {
   filter: none;
 }
 
+.dart {
+  opacity: 1;
+  animation: none;
+  transform: none;
+}
+
+.dart--one .dart-trail,
+.dart--two .dart-trail,
+.dart--three .dart-trail {
+  animation: none;
+}
+
 .services-section,
 .process-section {
   color: #f5f5f5;
