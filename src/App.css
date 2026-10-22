@@ -3594,6 +3594,19 @@ body {
   animation-delay: 3.2s;
 }
 
+.impact-ring {
+  animation-duration: 4.8s;
+  animation-delay: .528s;
+}
+
+.impact-ring--two {
+  animation-delay: 2.128s;
+}
+
+.impact-ring--three {
+  animation-delay: 3.728s;
+}
+
 @keyframes dart-arrive-premium {
   0%,
   2% {
@@ -3621,17 +3634,18 @@ body {
     transform: translate3d(-3px, 2px, 16px) scale(1.025) rotateX(-2deg) rotateY(2deg);
   }
 
-  14%,
-  65% {
+  11%,
+  14% {
     opacity: 1;
     transform: none;
   }
 
-  72% {
+  17% {
     opacity: 0;
+    transform: translate3d(0, 0, 18px) scale(.72);
   }
 
-  75%,
+  20%,
   100% {
     opacity: 0;
     transform:
@@ -3682,7 +3696,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .dart {
-    opacity: 1;
+    opacity: 0;
     animation: none;
     transform: none;
   }
