@@ -3535,6 +3535,36 @@ body {
   margin-top: 12px;
 }
 
+.focus-mission--1,
+.focus-mission--2,
+.focus-mission--3 {
+  animation-duration: 4.8s;
+  animation-delay: 0s;
+}
+
+.focus-mission--2 {
+  animation-delay: 1.6s;
+}
+
+.focus-mission--3 {
+  animation-delay: 3.2s;
+}
+
+.focus-mission--1 .mission-status i,
+.focus-mission--2 .mission-status i,
+.focus-mission--3 .mission-status i {
+  animation-duration: 4.8s;
+  animation-delay: 0s;
+}
+
+.focus-mission--2 .mission-status i {
+  animation-delay: 1.6s;
+}
+
+.focus-mission--3 .mission-status i {
+  animation-delay: 3.2s;
+}
+
 .dart {
   opacity: 1;
   filter: drop-shadow(0 0 7px rgb(255 200 87 / 52%)) drop-shadow(7px 11px 5px rgb(0 0 0 / 64%));
@@ -3581,11 +3611,11 @@ body {
       rotateY(-10deg);
   }
 
-  14% {
+  11% {
     transform: translate3d(-3px, 2px, 16px) scale(1.025) rotateX(-2deg) rotateY(2deg);
   }
 
-  18%,
+  15%,
   82% {
     opacity: 1;
     transform: none;
