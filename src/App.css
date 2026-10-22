@@ -3538,73 +3538,73 @@ body {
 .focus-mission--1,
 .focus-mission--2,
 .focus-mission--3 {
-  animation-duration: 4.8s;
+  animation-duration: 7.2s;
   animation-delay: 0s;
 }
 
 .focus-mission--2 {
-  animation-delay: 1.6s;
+  animation-delay: 2.4s;
 }
 
 .focus-mission--3 {
-  animation-delay: 3.2s;
+  animation-delay: 4.8s;
 }
 
 .focus-mission--1 .mission-status i,
 .focus-mission--2 .mission-status i,
 .focus-mission--3 .mission-status i {
-  animation-duration: 4.8s;
+  animation-duration: 7.2s;
   animation-delay: 0s;
 }
 
 .focus-mission--2 .mission-status i {
-  animation-delay: 1.6s;
+  animation-delay: 2.4s;
 }
 
 .focus-mission--3 .mission-status i {
-  animation-delay: 3.2s;
+  animation-delay: 4.8s;
 }
 
 .dart {
   opacity: 0;
   filter: drop-shadow(0 0 7px rgb(255 200 87 / 52%)) drop-shadow(7px 11px 5px rgb(0 0 0 / 64%));
-  animation: dart-arrive-premium 4.8s cubic-bezier(.18, .78, .22, 1) infinite;
+  animation: dart-arrive-premium 7.2s cubic-bezier(.18, .78, .22, 1) infinite;
   animation-fill-mode: both;
 }
 
 .dart--two {
-  animation-delay: 1.6s;
+  animation-delay: 2.4s;
 }
 
 .dart--three {
-  animation-delay: 3.2s;
+  animation-delay: 4.8s;
 }
 
 .dart--one .dart-trail,
 .dart--two .dart-trail,
 .dart--three .dart-trail {
-  animation: dart-trail-premium 4.8s ease-out infinite;
+  animation: dart-trail-premium 7.2s ease-out infinite;
 }
 
 .dart--two .dart-trail {
-  animation-delay: 1.6s;
+  animation-delay: 2.4s;
 }
 
 .dart--three .dart-trail {
-  animation-delay: 3.2s;
+  animation-delay: 4.8s;
 }
 
 .impact-ring {
-  animation-duration: 4.8s;
-  animation-delay: .528s;
+  animation-duration: 7.2s;
+  animation-delay: .792s;
 }
 
 .impact-ring--two {
-  animation-delay: 2.128s;
+  animation-delay: 3.192s;
 }
 
 .impact-ring--three {
-  animation-delay: 3.728s;
+  animation-delay: 5.592s;
 }
 
 @keyframes dart-arrive-premium {
