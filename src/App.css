@@ -3535,79 +3535,170 @@ body {
   margin-top: 12px;
 }
 
-.focus-mission--1,
-.focus-mission--2,
-.focus-mission--3 {
-  animation-duration: 7.2s;
-  animation-delay: 0s;
+.focus-mission--1 {
+  animation: mission-card-first 10s linear infinite;
 }
 
 .focus-mission--2 {
-  animation-delay: 2.4s;
+  animation: mission-card-second 10s linear infinite;
 }
 
 .focus-mission--3 {
-  animation-delay: 4.8s;
+  animation: mission-card-third 10s linear infinite;
 }
 
-.focus-mission--1 .mission-status i,
-.focus-mission--2 .mission-status i,
-.focus-mission--3 .mission-status i {
-  animation-duration: 7.2s;
-  animation-delay: 0s;
+.focus-mission--1 .mission-status i {
+  animation: mission-indicator-first 10s linear infinite;
 }
 
 .focus-mission--2 .mission-status i {
-  animation-delay: 2.4s;
+  animation: mission-indicator-second 10s linear infinite;
 }
 
 .focus-mission--3 .mission-status i {
-  animation-delay: 4.8s;
+  animation: mission-indicator-third 10s linear infinite;
 }
 
 .dart {
   opacity: 0;
   filter: drop-shadow(0 0 7px rgb(255 200 87 / 52%)) drop-shadow(7px 11px 5px rgb(0 0 0 / 64%));
-  animation: dart-arrive-premium 7.2s cubic-bezier(.18, .78, .22, 1) infinite;
+  animation-duration: 10s;
+  animation-timing-function: cubic-bezier(.18, .78, .22, 1);
+  animation-iteration-count: infinite;
   animation-fill-mode: both;
 }
 
+.dart--one {
+  animation-name: dart-sequence-first;
+}
+
 .dart--two {
-  animation-delay: 2.4s;
+  animation-name: dart-sequence-second;
+  animation-delay: 0s;
 }
 
 .dart--three {
-  animation-delay: 4.8s;
+  animation-name: dart-sequence-third;
+  animation-delay: 0s;
 }
 
-.dart--one .dart-trail,
-.dart--two .dart-trail,
-.dart--three .dart-trail {
-  animation: dart-trail-premium 7.2s ease-out infinite;
+.dart--one .dart-trail {
+  animation: dart-trail-first 10s ease-out infinite;
 }
 
 .dart--two .dart-trail {
-  animation-delay: 2.4s;
+  animation: dart-trail-second 10s ease-out infinite;
 }
 
 .dart--three .dart-trail {
-  animation-delay: 4.8s;
+  animation: dart-trail-third 10s ease-out infinite;
 }
 
-.impact-ring {
-  animation-duration: 7.2s;
-  animation-delay: .792s;
+.impact-ring--one {
+  animation: target-impact-first 10s ease-out infinite;
 }
 
 .impact-ring--two {
-  animation-delay: 3.192s;
+  animation: target-impact-second 10s ease-out infinite;
 }
 
 .impact-ring--three {
-  animation-delay: 5.592s;
+  animation: target-impact-third 10s ease-out infinite;
 }
 
-@keyframes dart-arrive-premium {
+@keyframes mission-card-first {
+  0%,
+  13% {
+    border-color: rgb(237 202 131 / 66%);
+    box-shadow: inset 0 1px 0 rgb(255 235 193 / 10%), 0 0 20px rgb(237 202 131 / 12%);
+  }
+
+  15%,
+  100% {
+    border-color: rgb(215 172 98 / 20%);
+    box-shadow: inset 0 1px 0 rgb(255 235 193 / 5%), 0 8px 20px rgb(0 0 0 / 12%);
+  }
+}
+
+@keyframes mission-card-second {
+  0%,
+  23%,
+  38%,
+  100% {
+    border-color: rgb(215 172 98 / 20%);
+    box-shadow: inset 0 1px 0 rgb(255 235 193 / 5%), 0 8px 20px rgb(0 0 0 / 12%);
+  }
+
+  25%,
+  36% {
+    border-color: rgb(237 202 131 / 66%);
+    box-shadow: inset 0 1px 0 rgb(255 235 193 / 10%), 0 0 20px rgb(237 202 131 / 12%);
+  }
+}
+
+@keyframes mission-card-third {
+  0%,
+  47%,
+  62%,
+  100% {
+    border-color: rgb(215 172 98 / 20%);
+    box-shadow: inset 0 1px 0 rgb(255 235 193 / 5%), 0 8px 20px rgb(0 0 0 / 12%);
+  }
+
+  49%,
+  60% {
+    border-color: rgb(237 202 131 / 66%);
+    box-shadow: inset 0 1px 0 rgb(255 235 193 / 10%), 0 0 20px rgb(237 202 131 / 12%);
+  }
+}
+
+@keyframes mission-indicator-first {
+  0%,
+  13% {
+    background: #f2d397;
+    box-shadow: 0 0 10px rgb(237 202 131 / 80%);
+  }
+
+  15%,
+  100% {
+    background: #786447;
+    box-shadow: 0 0 0 transparent;
+  }
+}
+
+@keyframes mission-indicator-second {
+  0%,
+  23%,
+  38%,
+  100% {
+    background: #786447;
+    box-shadow: 0 0 0 transparent;
+  }
+
+  25%,
+  36% {
+    background: #f2d397;
+    box-shadow: 0 0 10px rgb(237 202 131 / 80%);
+  }
+}
+
+@keyframes mission-indicator-third {
+  0%,
+  47%,
+  62%,
+  100% {
+    background: #786447;
+    box-shadow: 0 0 0 transparent;
+  }
+
+  49%,
+  60% {
+    background: #f2d397;
+    box-shadow: 0 0 10px rgb(237 202 131 / 80%);
+  }
+}
+
+@keyframes dart-sequence-first {
   0%,
   2% {
     opacity: 0;
@@ -3634,18 +3725,21 @@ body {
     transform: translate3d(-3px, 2px, 16px) scale(1.025) rotateX(-2deg) rotateY(2deg);
   }
 
-  11%,
-  14% {
+  12%,
+  68% {
     opacity: 1;
     transform: none;
   }
 
-  17% {
-    opacity: 0;
-    transform: translate3d(0, 0, 18px) scale(.72);
+  73% {
+    transform:
+      translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px)
+      scale(.62)
+      rotateX(17deg)
+      rotateY(-10deg);
   }
 
-  20%,
+  77%,
   100% {
     opacity: 0;
     transform:
@@ -3656,26 +3750,227 @@ body {
   }
 }
 
-@keyframes dart-trail-premium {
+@keyframes dart-sequence-second {
   0%,
-  2% {
+  23% {
+    opacity: 0;
+    transform:
+      translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
+      scale(.28)
+      rotateX(32deg)
+      rotateY(-18deg);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  31% {
+    transform:
+      translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px)
+      scale(.62)
+      rotateX(17deg)
+      rotateY(-10deg);
+  }
+
+  34% {
+    transform: translate3d(-3px, 2px, 16px) scale(1.025) rotateX(-2deg) rotateY(2deg);
+  }
+
+  35%,
+  68% {
+    opacity: 1;
+    transform: none;
+  }
+
+  73% {
+    transform:
+      translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px)
+      scale(.62)
+      rotateX(17deg)
+      rotateY(-10deg);
+  }
+
+  77%,
+  100% {
+    opacity: 0;
+    transform:
+      translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
+      scale(.28)
+      rotateX(32deg)
+      rotateY(-18deg);
+  }
+}
+
+@keyframes dart-sequence-third {
+  0%,
+  47% {
+    opacity: 0;
+    transform:
+      translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
+      scale(.28)
+      rotateX(32deg)
+      rotateY(-18deg);
+  }
+
+  49% {
+    opacity: 1;
+  }
+
+  55% {
+    transform:
+      translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px)
+      scale(.62)
+      rotateX(17deg)
+      rotateY(-10deg);
+  }
+
+  58% {
+    transform: translate3d(-3px, 2px, 16px) scale(1.025) rotateX(-2deg) rotateY(2deg);
+  }
+
+  59%,
+  68% {
+    opacity: 1;
+    transform: none;
+  }
+
+  73% {
+    transform:
+      translate3d(var(--dart-mid-x), var(--dart-mid-y), -170px)
+      scale(.62)
+      rotateX(17deg)
+      rotateY(-10deg);
+  }
+
+  77%,
+  100% {
+    opacity: 0;
+    transform:
+      translate3d(var(--dart-from-x), var(--dart-from-y), -430px)
+      scale(.28)
+      rotateX(32deg)
+      rotateY(-18deg);
+  }
+}
+
+@keyframes dart-trail-first {
+  0%,
+  2%,
+  100% {
     opacity: 0;
     stroke-dashoffset: 560;
   }
 
-  4% {
+  3% {
     opacity: .9;
   }
 
-  14% {
+  10% {
     opacity: .18;
     stroke-dashoffset: 0;
   }
 
-  18%,
+  13% {
+    opacity: 0;
+  }
+}
+
+@keyframes dart-trail-second {
+  0%,
+  23%,
   100% {
     opacity: 0;
+    stroke-dashoffset: 560;
+  }
+
+  25% {
+    opacity: .9;
+  }
+
+  33% {
+    opacity: .18;
     stroke-dashoffset: 0;
+  }
+
+  36% {
+    opacity: 0;
+  }
+}
+
+@keyframes dart-trail-third {
+  0%,
+  47%,
+  100% {
+    opacity: 0;
+    stroke-dashoffset: 560;
+  }
+
+  49% {
+    opacity: .9;
+  }
+
+  57% {
+    opacity: .18;
+    stroke-dashoffset: 0;
+  }
+
+  60% {
+    opacity: 0;
+  }
+}
+
+@keyframes target-impact-first {
+  0%,
+  10%,
+  100% {
+    opacity: 0;
+    transform: scale(.45);
+  }
+
+  11% {
+    opacity: .8;
+  }
+
+  16% {
+    opacity: 0;
+    transform: scale(2.3);
+  }
+}
+
+@keyframes target-impact-second {
+  0%,
+  33%,
+  100% {
+    opacity: 0;
+    transform: scale(.45);
+  }
+
+  34% {
+    opacity: .8;
+  }
+
+  39% {
+    opacity: 0;
+    transform: scale(2.3);
+  }
+}
+
+@keyframes target-impact-third {
+  0%,
+  57%,
+  100% {
+    opacity: 0;
+    transform: scale(.45);
+  }
+
+  58% {
+    opacity: .8;
+  }
+
+  63% {
+    opacity: 0;
+    transform: scale(2.3);
   }
 }
 
@@ -3701,8 +3996,18 @@ body {
     transform: none;
   }
 
-  .dart-trail {
+  .dart-trail,
+  .impact-ring {
     display: none;
+    animation: none;
+  }
+
+  .focus-mission--1,
+  .focus-mission--2,
+  .focus-mission--3,
+  .focus-mission--1 .mission-status i,
+  .focus-mission--2 .mission-status i,
+  .focus-mission--3 .mission-status i {
     animation: none;
   }
 }
