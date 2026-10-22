@@ -4056,3 +4056,16 @@ input:focus-visible,
 textarea:focus-visible {
   outline-color: #ffc857;
 }
+
+.dart,
+.dart--one,
+.dart--two,
+.dart--three {
+  opacity: 1;
+  animation: none;
+  transform: none;
+}
+
+.dart-trail {
+  display: none;
+}
